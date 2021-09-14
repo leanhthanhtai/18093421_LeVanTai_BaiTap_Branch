@@ -6,17 +6,22 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 @SpringBootTest
 class DemoApplicationTests {
 
     @Autowired
     StudentRepository studentRepository;
     @Test
-    public void getStudent(){
+    public void getStudents(){
 
-        Student student  = studentRepository.getStudentByLastName("Dung");
-        System.out.println(student.getFirstName());
-        System.out.println(student.getLastName());
+        List<Student> lst = studentRepository.getStudents();
+       for (Student student : lst){
+           System.out.println(student.getFirstName());
+           System.out.println(student.getLastName());
+       }
+
     }
 
 //    @Test
