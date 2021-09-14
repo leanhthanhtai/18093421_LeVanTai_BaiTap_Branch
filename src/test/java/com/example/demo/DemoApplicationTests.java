@@ -13,7 +13,14 @@ class DemoApplicationTests {
     StudentRepository studentRepository;
 
     @Test
-    void context(){
+    public void insertDataStudent(){
+        Student student = Student.builder()
+                .firstName("Le ANh")
+                .lastName("Dung")
+                .email("anhdung@")
+                .phone("1234567")
+                .build();
+        studentRepository.save(student);
 
     }
 
