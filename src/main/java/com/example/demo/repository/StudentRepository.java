@@ -8,4 +8,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StudentRepository extends CrudRepository<Student, Long> {
 
+    @Query(value="select s from Student s where s.lastName =?1")
+    public Student getStudentByLastName(String lastname);
+
+
 }

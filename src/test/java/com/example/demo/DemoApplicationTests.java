@@ -11,17 +11,24 @@ class DemoApplicationTests {
 
     @Autowired
     StudentRepository studentRepository;
-
     @Test
-    public void insertDataStudent(){
-        Student student = Student.builder()
-                .firstName("Le ANh")
-                .lastName("Dung")
-                .email("anhdung@")
-                .phone("1234567")
-                .build();
-        studentRepository.save(student);
+    public void getStudent(){
 
+        Student student  = studentRepository.getStudentByLastName("Dung");
+        System.out.println(student.getFirstName());
+        System.out.println(student.getLastName());
     }
+
+//    @Test
+//    public void insertDataStudent(){
+//        Student student = Student.builder()
+//                .firstName("Le ANh")
+//                .lastName("Dung")
+//                .email("anhdung@")
+//                .phone("1234567")
+//                .build();
+//        studentRepository.save(student);
+//
+//    }
 
 }
